@@ -1,7 +1,16 @@
 <h1>List</h1>
 <ul>
-  <li>@Model.Get()</li>
+
+  @foreach(var car in Model)
+  {
+    <li>@car.GetMakeModel()</li>
+    <li>@car.GetYear()</li>
+    <li>@car.GetMiles()</li>
+    <li>@car.GetPrice()</li>
+    <li>-----</li>
+  }
+
 </ul>
 
 
-<a href="/items/new">Add your car</a>
+<a href="/addList">Add your car</a>

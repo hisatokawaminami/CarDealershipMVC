@@ -1,14 +1,31 @@
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System;
 using CarDealership.Models;
 
 namespace CarDealership.Controllers
 {
-  public class ItemsController : Controller
+  public class CarsController : Controller
   {
-    [Route("/addList")]
+    [HttpGet("/addList")]
     public ActionResult AddList()
     {
-     return View("AddList");
+      return View();
+    }
+
+    [HttpPost("/new-car")]
+    public ActionResult Index()
+    {
+      Car newCar = new Car(Request.Query["makeModel"], Request.Query["year"], Request.Query["miles"], Request.Query["price"]);
+      newCar.Save();
+      return View(Car.GetAll());
+    }
+
+    [HttpGet("/inventory")]
+    public ActionResult GetInventory()
+    {
+      List<Car> inventory = Car.GetAll();
+      return View("Index", inventory);
     }
   }
 }

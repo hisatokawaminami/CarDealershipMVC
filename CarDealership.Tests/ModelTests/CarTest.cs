@@ -13,7 +13,7 @@ namespace CarDealership.Tests
     {
       //Arrange
       string makeModel = "Toyota";
-      Car newCar = new Car(makeModel);
+      Car newCar = new Car(makeModel, 0, 0, 0);
 
       //Act
       string result = newCar.GetMakeModel();
@@ -27,7 +27,7 @@ namespace CarDealership.Tests
     {
       //Arrange
       int year = 2018;
-      Car newCar = new Car(year);
+      Car newCar = new Car("Toyota", year, 0, 0);
 
       //Act
       int result = newCar.GetYear();
@@ -41,7 +41,7 @@ namespace CarDealership.Tests
     {
       //Arrange
       int miles = 12345;
-      Car newCar = new Car(miles);
+      Car newCar = new Car("0", 0, miles, 0);
 
       //Act
       int result = newCar.GetMiles();
@@ -55,7 +55,7 @@ namespace CarDealership.Tests
     {
       //Arrange
       int price = 54321;
-      Car newCar = new Car(price);
+      Car newCar = new Car("0", 0, 0, price);
 
       //Act
       int result = newCar.GetPrice();
