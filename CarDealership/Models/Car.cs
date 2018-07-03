@@ -10,15 +10,14 @@ public class Car
     private int _year;
     private int _miles;
     private int _price;
-    private static List<Car> _instances = new List<Car> {};
+    public static List<Car> _instances = new List<Car> {};
 
-    public Car (string makeModel)
-    // , int year, int miles, int price)
+    public Car (string makeModel, int year, int miles, int price)
     {
       _makeModel = makeModel;
-      // _year = year;
-      // _miles = miles;
-      // _price = price;
+      _year = year;
+      _miles = miles;
+      _price = price;
     }
 
     public string GetMakeModel()
@@ -30,23 +29,32 @@ public class Car
       _makeModel = newMakeModel;
     }
 
-    // public int GetYear()
-    // {
-    //   return _year;
-    // }
-    // public void SetYear(int newYear)
-    // {
-    //   _year = newYear;
-    // }
-    //
-    // public int GetMiles()
-    // {
-    //   return _miles;
-    // }
-    // public void SetPrice(int newPrice)
-    // {
-    //   _price = newPrice;
-    // }
+    public int GetYear()
+    {
+      return _year;
+    }
+    public void SetYear(int newYear)
+    {
+      _year = newYear;
+    }
+
+    public int GetMiles()
+    {
+      return _miles;
+    }
+    public void SetMiles(int newMiles)
+    {
+      _miles = newMiles;
+    }
+
+    public int GetPrice()
+    {
+      return _price;
+    }
+    public void SetPrice(int newPrice)
+    {
+      _price = newPrice;
+    }
 
     public static List<Car> GetAll()
     {
